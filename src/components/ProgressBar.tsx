@@ -3,7 +3,11 @@
 import './progressbar.css';
 import React, { useState, useEffect } from 'react';
 
-const ProgressBar = ({ isPlaying }) => {
+interface ProgressBarProps {
+    isPlaying: boolean;
+  }
+
+const ProgressBar: React.FC<ProgressBarProps> = ({ isPlaying }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

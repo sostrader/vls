@@ -10,7 +10,7 @@ export default function DelayedButton() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowButton(true);
-    }, 10000); 
+    }, 100000); 
 
     return () => clearTimeout(timer);
   }, []);

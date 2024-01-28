@@ -26,19 +26,3 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-/* Add this to your CSS file */
-
-.progress-container {
-  width: 100%;
-  max-width: 1000px;
-  background-color: #ddd; /* Light gray background */
-  height: 07px; /* Height of the progress bar */
-  border-radius: 10px; /* Rounded corners */
-}
-
-.progress-bar {
-  height: 100%;
-  background-color: green; /* Color of the progress */
-  border-radius: 10px; /* Rounded corners */
-  width: 0%; /* Initial width of the progress bar */
-}

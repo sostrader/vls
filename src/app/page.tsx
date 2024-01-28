@@ -10,7 +10,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col gap-10 items-center justify-center p-24">
 
              <Player />
-             <Link href={'/'} ></Link>
+             <Link href={'/'} >test</Link>
     </main>
   )
 }

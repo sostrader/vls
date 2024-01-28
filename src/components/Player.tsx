@@ -14,7 +14,6 @@ import {
   
 } from '@vidstack/react/player/layouts/default';
 
-import { textTracks } from './tracks';
 
 
 export function Player() {
@@ -26,7 +25,7 @@ export function Player() {
         load="visible"
         className="player"
         title="Sprite Fight"
-        src={"video.mp4"}
+        src={"https://s3.sostrader.com.br/vsl/video.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=TBRLPL8LL8M7W5WK0UNH%2F20240128%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240128T160502Z&X-Amz-Expires=43200&X-Amz-Security-Token=eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NLZXkiOiJUQlJMUEw4TEw4TTdXNVdLMFVOSCIsImV4cCI6MTcwNjUwMDU4MywicGFyZW50IjoidHJhZGVycGVkcm9zbyJ9.s0vXQ1mVsiSCFAyWQq7GA05pwOHrxXFzr0-Dqd8gGKK8NtsuiHaSLJ72aMNDGBviaPM9GHDAG1QL0dWXI0qxiQ&X-Amz-SignedHeaders=host&versionId=null&X-Amz-Signature=cb98032e55c4056f20d04c90c24bb871705abded9481b9c6c9433be799e2442a"}
         aspectRatio="16/9"
         crossorigin
       

@@ -18,7 +18,7 @@ export function Player() {
         load="visible"
         className="player"
         title="Ecos da Identidade."
-        src="https://www.youtube.com/embed/bUqi5kupCNU" // Substitua '_cMxraX_5RE' pelo ID do vídeo do YouTube
+        src="https://www.youtube.com/embed/-RSptgqn0iE" // Substitua '_cMxraX_5RE' pelo ID do vídeo do YouTube
         aspectRatio="16/9"
         crossorigin
       >
@@ -26,7 +26,7 @@ export function Player() {
           <Poster
             className="vds-poster"
             src="play.gif"
-            alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
+            alt="Play!"
           />
         </MediaProvider>
         <DefaultVideoLayout icons={defaultLayoutIcons} />

@@ -14,7 +14,6 @@
   --video-focus-ring-color: var(--focus-color);
   --video-border-radius: 10px;
 
-  /* 👉 https://vidstack.io/docs/player/components/layouts/default#css-variables for more. */
 }
 
 .player[data-view-type='audio'] .vds-poster {
@@ -24,8 +23,8 @@
 
 .player[data-view-type='video'] {
   aspect-ratio: 16 /9;
-  width: 100%;
-  max-width: 900px;
+  width: 150%;
+  max-width: 1000px;
 }
 
 .src-buttons {
@@ -36,3 +35,10 @@
   margin-inline: auto;
   max-width: 300px;
 }
+
+.player .vds-controls {
+  display: none;
+}
+
+
+

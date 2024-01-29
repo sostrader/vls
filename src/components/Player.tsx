@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 import { MediaPlayer, MediaProvider, Poster } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultAudioLayout, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
-
+import DelayButton from './DelayedButton'
 
 
 export function Player() {
@@ -43,6 +43,7 @@ export function Player() {
         <DefaultVideoLayout icons={defaultLayoutIcons} />
       </MediaPlayer>
       <ProgressBar isPlaying={isPlaying} />
+      <DelayButton isPlaying={isPlaying} />
     </>
   );
 }

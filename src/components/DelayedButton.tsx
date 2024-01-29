@@ -4,16 +4,24 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function DelayedButton() {
+interface DelayedButtonProps {
+  isPlaying: boolean;
+}
+
+const DelayedButton: React.FC<DelayedButtonProps> = ({ isPlaying }) => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowButton(true);
-    }, 100000); 
+    let timer;
+
+    if (isPlaying) {
+      timer = setTimeout(() => {
+        setShowButton(true);
+      }, 100000); // Timer starts when isPlaying is true
+    }
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isPlaying]); // Dependency array includes isPlaying
 
   if (!showButton) {
     return null;
@@ -24,4 +32,6 @@ export default function DelayedButton() {
       <a className="bg-green-500 text-white p-3 rounded">Eu quero</a>
     </Link>
   );
-}
+};
+
+export default DelayedButton;

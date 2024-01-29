@@ -28,7 +28,7 @@
 .player[data-view-type='video'] {
   aspect-ratio: 16 /9;
   width: 150%;
-  max-width: 900px;
+  max-width: 1000px;
   
 }
 
@@ -65,5 +65,19 @@
   display: none;
 }
 
+.player[data-view-type='video'] .vds-chapter-title {
+  opacity: 0;
+} 
 
+.player[data-view-type='video'] .vds-slider {
+  opacity: 0;
+}
+
+.player[data-view-type='video'] .vds-icon {
+  opacity: 0;
+} 
+
+.player[data-view-type='video'] .vds-rover {
+  opacity: 0;
+} 
 

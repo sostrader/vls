@@ -12,7 +12,7 @@ const DelayedButton: React.FC<DelayedButtonProps> = ({ isPlaying }) => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    let timer;
+    let timer: string | number | NodeJS.Timeout | undefined;
 
     if (isPlaying) {
       timer = setTimeout(() => {
@@ -29,7 +29,7 @@ const DelayedButton: React.FC<DelayedButtonProps> = ({ isPlaying }) => {
 
   return (
     <Link href={'https://secure.doppus.com/pay/P9O5Z0M9O5Z0G905HJB'} legacyBehavior>
-      <a className="bg-green-500 text-white p-3 rounded">Eu quero</a>
+      <a className="bg-green-500 text-white p-2 rounded">Eu quero</a>
     </Link>
   );
 };

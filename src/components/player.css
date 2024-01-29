@@ -27,18 +27,18 @@
 
 .player[data-view-type='video'] {
   aspect-ratio: 16 /9;
-  width: 150%;
+  width: 180%;
   max-width: 1000px;
   
 }
 
 .src-buttons {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 40px;
+  margin-top: 60px;
   margin-inline: auto;
-  max-width: 300px;
+  max-width: 600px;
 }
 
 .player .vds-time-group {
@@ -73,11 +73,8 @@
   opacity: 0;
 }
 
-.player[data-view-type='video'] .vds-icon {
+/* .player[data-view-type='video'] .vds-icon {
   opacity: 0;
-} 
+}  */
 
-.player[data-view-type='video'] .vds-rover {
-  opacity: 0;
-} 
 

@@ -35,11 +35,11 @@ export function Player() {
         <MediaProvider>
           <Poster
             className="vds-poster"
-            src="playW.gif"
+            src="pnl.jpeg"
             alt="Play!"
           />
         </MediaProvider>
-        {/* <DefaultAudioLayout icons={defaultLayoutIcons} /> */}
+        <DefaultAudioLayout icons={defaultLayoutIcons} /> 
         <DefaultVideoLayout icons={defaultLayoutIcons} />
       </MediaPlayer>
       <ProgressBar isPlaying={isPlaying} />

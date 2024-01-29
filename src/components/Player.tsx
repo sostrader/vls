@@ -22,7 +22,7 @@ export function Player() {
     <>
       <MediaPlayer
         playsinline
-        //load="visible"
+        // load="visible"
         className="player"
         title="Ecos da Identidade."
         src="https://www.youtube.com/embed/NlnnKEdS46U"

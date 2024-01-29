@@ -21,6 +21,7 @@
 }
 
 
+
 .player[data-view-type='video'] {
   aspect-ratio: 16 /9;
   width: 150%;
@@ -33,11 +34,21 @@
   justify-content: space-evenly;
   margin-top: 40px;
   margin-inline: auto;
-  max-width: 300px;
+  max-width: 1px;
 }
 
-.player .vds-controls {
+/* .player .vds-controls {
   display: none;
-}
+} */
 
+/* .player[data-media-type="video"] media-fullscreen-button {
+  display: none;
+}  */
 
+/* media-player[data-media-type="audio"] media-fullscreen-button {
+  display: none;
+} 
+
+media-player[data-media-type="audio"] media-mute-button {
+  display: none;
+}   */

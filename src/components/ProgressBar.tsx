@@ -16,12 +16,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ isPlaying }) => {
     if (isPlaying) {
      
         const totalTime = 8 * 60 * 1000; // 4 minutos no total
-        const halfTime = 1 * 60 * 1000; // Metade em 2 minutos
+        const halfTime = 4 * 60 * 1000; // Metade em 2 minutos
     
       interval = setInterval(() => {
         setProgress((prevProgress) => {
           const time = prevProgress * totalTime / 100;
-          const delta = time < halfTime ? 0.5 : 0.1; // Faster increment before halfTime
+          const delta = time < halfTime ? 0.7 : 0.1; // Faster increment before halfTime
           return Math.min(prevProgress + delta, 100);
         });
       }, 1000);

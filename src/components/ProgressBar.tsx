@@ -15,8 +15,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ isPlaying }) => {
 
     if (isPlaying) {
      
-        const totalTime = 8 * 60 * 1000; // 4 minutos no total
-        const halfTime = 4 * 60 * 1000; // Metade em 2 minutos
+        const totalTime = 4 * 60 * 1000; // 8 minutos no total
+        const halfTime = 2 * 60 * 1000; // Metade em 4 minutos
     
       interval = setInterval(() => {
         setProgress((prevProgress) => {

@@ -25,7 +25,7 @@ export function Player() {
         // load="visible"
         className="player"
         title="Ecos da Identidade."
-        src="https://www.youtube.com/embed/NlnnKEdS46U"
+        src="https://www.youtube.com/embed/vjYp418oTzo"
         aspectRatio="16/9"
         crossorigin
         onPlay={handlePlay}

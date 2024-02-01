@@ -22,18 +22,11 @@ export function Player() {
   let player = useRef<MediaPlayerInstance>(null),
     [src, setSrc] = useState('');
 
-  // useEffect(() => {
-  //   // Initialize src.
-  //   changeSource('youtube');
-
-  //   // Subscribe to state updates.
-  //   return player.current!.subscribe(({ paused, viewType }) => {
-  //     // console.log('is paused?', '->', paused);
-  //     // console.log('is audio view?', '->', viewType === 'audio');
-  //   });
-  // }, []);
-
-
+      function onProviderChange(provider: MediaProviderAdapter | null) {
+        if (isYouTubeProvider(provider)) {
+          provider.cookies = true;
+        }
+      }
   
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -41,31 +34,30 @@ export function Player() {
   const handlePause = () => setIsPlaying(false);
  
   return (
-    <>
-      <MediaPlayer
-        playsinline
-        load="visible"
-        className="player"
-        title="Ecos da Identidade."
-        src="youtube/9DNZscmpDz4"
-        aspectRatio="16/9"
-        crossorigin
-        onPlay={handlePlay}
-        onPause={handlePause}
-       
-      >
-        <MediaProvider>
-          <Poster
-            className="vds-poster"
-            src="pnl.jpeg"
-            alt="Play!"
-          />
-        </MediaProvider>
-        <DefaultAudioLayout icons={defaultLayoutIcons} /> 
-        <DefaultVideoLayout icons={defaultLayoutIcons} />
-      </MediaPlayer>
-      <ProgressBar isPlaying={isPlaying} />
-      <DelayButton isPlaying={isPlaying} />
-    </>
+    <div className="player-container">
+      <div className="video-and-progress-container">
+        <MediaPlayer
+          playsinline
+          load="visible"
+          className="player"
+          title="Ecos da Identidade."
+          src="https://www.youtube.com/embed/9DNZscmpDz4"
+          aspectRatio="16/9"
+          crossorigin
+          onPlay={handlePlay}
+          onPause={handlePause}
+        >
+          <MediaProvider>
+            <Poster className="vds-poster" src="pnl.jpeg" alt="Play!" />
+          </MediaProvider>
+          <DefaultAudioLayout icons={defaultLayoutIcons} />
+          <DefaultVideoLayout icons={defaultLayoutIcons} />
+        </MediaPlayer>
+        <ProgressBar isPlaying={isPlaying} />
+      </div>
+      <div className="delayed-button-container">
+        <DelayButton isPlaying={isPlaying} />
+      </div>
+    </div>
   );
 }

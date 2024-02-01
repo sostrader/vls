@@ -1,5 +1,4 @@
 "use client";
-import './progressbar.css';
 import React, { useState, useEffect } from 'react';
 
 interface ProgressBarProps {

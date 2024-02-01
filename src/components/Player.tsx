@@ -47,12 +47,12 @@ export function Player() {
         load="visible"
         className="player"
         title="Ecos da Identidade."
-        src="youtube/vjYp418oTzo"
+        src="youtube/9DNZscmpDz4"
         aspectRatio="16/9"
         crossorigin
         onPlay={handlePlay}
         onPause={handlePause}
-        
+       
       >
         <MediaProvider>
           <Poster

@@ -1,35 +1,51 @@
-// components/DelayedButton.tsx
 "use client";
 import './progressbar.css';
 import React, { useState, useEffect } from 'react';
 
 interface ProgressBarProps {
-    isPlaying: boolean;
-  }
+  isPlaying: boolean;
+}
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ isPlaying }) => {
   const [progress, setProgress] = useState(0);
+  const totalTime = 7 * 60 * 1000; // 7 minutos em milissegundos
+  let fastPhaseEndTime = 0; // Guarda o tempo em que a fase rápida termina
 
   useEffect(() => {
-    let interval: string | number | NodeJS.Timeout | undefined;
+    let interval: NodeJS.Timeout | undefined;
 
     if (isPlaying) {
-     
-        const totalTime = 7 * 60 * 1000; // 8 minutos no total
-        const halfTime = totalTime / 2 * 60 * 1000; // Metade em 4 minutos
-    
+      // Define o tempo para atualizações de progresso
+      const updateInterval = 1000; // atualiza a cada segundo
+      const fastSpeedMultiplier = 4; // Velocidade 4x até 70%
+      const fastPhaseTarget = 70; // Target para mudar a velocidade
+
       interval = setInterval(() => {
         setProgress((prevProgress) => {
-          const time = prevProgress * totalTime / 100;
-          const delta = time < halfTime ? 0.5 : 0.1; // Faster increment before halfTime
-          return Math.min(prevProgress + delta, 100);
+          // Calcula o progresso baseado na fase
+          if (prevProgress < fastPhaseTarget) {
+            // Calcula o tempo que passou desde o início até agora
+            let timeSinceStart = (prevProgress / fastPhaseTarget) * (totalTime / fastSpeedMultiplier);
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            fastPhaseEndTime = timeSinceStart;
+            // Incremento 4x mais rápido
+            return Math.min(prevProgress + (updateInterval * fastSpeedMultiplier * 100) / totalTime, fastPhaseTarget);
+          } else {
+            // Calcula o incremento para os 30% finais baseado no tempo restante
+            let slowPhaseTime = totalTime - fastPhaseEndTime;
+            let timeSinceFastPhaseEnd = (prevProgress - fastPhaseTarget) / (100 - fastPhaseTarget) * slowPhaseTime;
+            let nextIncrement = (updateInterval / slowPhaseTime) * (100 - fastPhaseTarget);
+            return Math.min(prevProgress + nextIncrement, 100);
+          }
         });
-      }, 1000);
+      }, updateInterval);
     } else {
       clearInterval(interval);
     }
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [isPlaying]);
 
   return (

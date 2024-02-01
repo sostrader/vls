@@ -17,7 +17,7 @@ const DelayedButton: React.FC<DelayedButtonProps> = ({ isPlaying }) => {
     if (isPlaying) {
       timer = setTimeout(() => {
         setShowButton(true);
-      }, 100000); // Timer starts when isPlaying is true
+      }, 360000); // Timer starts when isPlaying is true
     }
 
     return () => clearTimeout(timer);

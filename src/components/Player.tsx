@@ -4,14 +4,36 @@ import './player.css';
 
 
 
-import React, { useState } from 'react';
-import { MediaPlayer, MediaProvider, Poster } from '@vidstack/react';
+import { useEffect, useRef, useState } from 'react';
+import { MediaPlayer, MediaProvider, Poster, isYouTubeProvider,isHLSProvider, 
+  type MediaCanPlayDetail,
+  type MediaCanPlayEvent,
+  type MediaPlayerInstance,
+  type MediaProviderAdapter,
+  type MediaProviderChangeEvent
+} from '@vidstack/react';
 import { defaultLayoutIcons, DefaultAudioLayout, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
 import DelayButton from './DelayedButton'
 
 
 export function Player() {
+
+  let player = useRef<MediaPlayerInstance>(null),
+    [src, setSrc] = useState('');
+
+  // useEffect(() => {
+  //   // Initialize src.
+  //   changeSource('youtube');
+
+  //   // Subscribe to state updates.
+  //   return player.current!.subscribe(({ paused, viewType }) => {
+  //     // console.log('is paused?', '->', paused);
+  //     // console.log('is audio view?', '->', viewType === 'audio');
+  //   });
+  // }, []);
+
+
   
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -22,10 +44,10 @@ export function Player() {
     <>
       <MediaPlayer
         playsinline
-        // load="visible"
+        load="visible"
         className="player"
         title="Ecos da Identidade."
-        src="https://www.youtube.com/embed/vjYp418oTzo"
+        src="youtube/vjYp418oTzo"
         aspectRatio="16/9"
         crossorigin
         onPlay={handlePlay}

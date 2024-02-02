@@ -4,13 +4,10 @@ import './player.css';
 
 
 
-import { useEffect, useRef, useState } from 'react';
-import { MediaPlayer, MediaProvider, Poster, isYouTubeProvider,isHLSProvider, 
-  type MediaCanPlayDetail,
-  type MediaCanPlayEvent,
+import { useRef, useState } from 'react';
+import { MediaPlayer, MediaProvider, Poster, isYouTubeProvider,
   type MediaPlayerInstance,
   type MediaProviderAdapter,
-  type MediaProviderChangeEvent
 } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultAudioLayout, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
 import ProgressBar from './ProgressBar'; // Import the ProgressBar component
@@ -39,13 +36,14 @@ export function Player() {
         <MediaPlayer
           playsinline
           load="visible"
-          className="player"
+          className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
           src="https://www.youtube.com/embed/9DNZscmpDz4"
-          // aspectRatio="16/9"
           crossorigin
+          ref={player}
           onPlay={handlePlay}
           onPause={handlePause}
+          onProviderChange={onProviderChange}
         >
           <MediaProvider>
             <Poster className="vds-poster" src="pnl.jpeg" alt="Play!" />

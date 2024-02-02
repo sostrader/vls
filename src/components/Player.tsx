@@ -42,7 +42,7 @@ export function Player() {
           
         >
           <MediaProvider>
-            <Poster className="vds-poster" src="ecos.png" alt="Play!" />
+            <Poster className="vds-poster" src="clicktoplay.gif" alt="Play!" />
           </MediaProvider>
           <DefaultAudioLayout icons={defaultLayoutIcons} />
           <DefaultVideoLayout icons={defaultLayoutIcons} />

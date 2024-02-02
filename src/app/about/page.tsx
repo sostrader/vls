@@ -1,12 +1,16 @@
+// page.tsx
+import React from 'react';
+import Header from '../../components/Header'; // Ajuste o caminho conforme necessário
+import { Player } from '../../components/Player'; // Ajuste o caminho conforme necessário
 
-
-import Link from 'next/link'
-import React from 'react'
-
-function page() {
+export default function Home() {
   return (
-    <Link href={'/'}>this is about</Link>
-  )
+    <div className="flex flex-col min-h-screen bg-gray-950 text-white">
+      {/* <Header title1="A Mais Abrangente Exploração Científica das Personalidades Já Realizada" title2="Método Único no Mundo" title3="Ecos da Identidade" /> */}
+      <Header title1="O Estudo Científico Mais Abrangente e Único sobre Personalidade do Mundo" title2="Ecos da Identidade"/>
+      <main className="flex flex-col items-center p-0 w-full">
+      <Player />
+      </main>
+    </div>
+  );
 }
-
-export default page

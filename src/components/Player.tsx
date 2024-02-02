@@ -3,10 +3,8 @@
 import './player.css';
 
 
-
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { MediaPlayer, MediaProvider, Poster, isYouTubeProvider,
-  type MediaPlayerInstance,
   type MediaProviderAdapter,
 } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultAudioLayout, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
@@ -16,8 +14,6 @@ import DelayButton from './DelayedButton'
 
 export function Player() {
 
-  let player = useRef<MediaPlayerInstance>(null),
-    [src, setSrc] = useState('');
 
       function onProviderChange(provider: MediaProviderAdapter | null) {
         if (isYouTubeProvider(provider)) {
@@ -29,21 +25,21 @@ export function Player() {
 
   const handlePlay = () => setIsPlaying(true);
   const handlePause = () => setIsPlaying(false);
- 
+
+  
   return (
     <div className="player-container">
       <div className="video-and-progress-container">
-        <MediaPlayer
+        <MediaPlayer onProviderChange={onProviderChange}
           playsinline
           load="visible"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
-          src="https://www.youtube.com/embed/4tUU66blhuY"
+          src="youtube/4tUU66blhuY"
           crossorigin
-          ref={player}
           onPlay={handlePlay}
           onPause={handlePause}
-          onProviderChange={onProviderChange}
+          
         >
           <MediaProvider>
             <Poster className="vds-poster" src="ecos.png" alt="Play!" />

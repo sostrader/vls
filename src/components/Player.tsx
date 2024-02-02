@@ -38,7 +38,7 @@ export function Player() {
           load="visible"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
-          src="https://www.youtube.com/embed/9DNZscmpDz4"
+          src="https://www.youtube.com/embed/4tUU66blhuY"
           crossorigin
           ref={player}
           onPlay={handlePlay}
@@ -46,7 +46,7 @@ export function Player() {
           onProviderChange={onProviderChange}
         >
           <MediaProvider>
-            <Poster className="vds-poster" src="pnl.jpeg" alt="Play!" />
+            <Poster className="vds-poster" src="ecos.png" alt="Play!" />
           </MediaProvider>
           <DefaultAudioLayout icons={defaultLayoutIcons} />
           <DefaultVideoLayout icons={defaultLayoutIcons} />

@@ -42,7 +42,7 @@ export function Player() {
           className="player"
           title="Ecos da Identidade."
           src="https://www.youtube.com/embed/9DNZscmpDz4"
-          aspectRatio="16/9"
+          // aspectRatio="16/9"
           crossorigin
           onPlay={handlePlay}
           onPause={handlePause}

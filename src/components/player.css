@@ -4,10 +4,10 @@
 
 .player {
   position: relative;
-  display: block; /* Mudar para block pode ajudar na responsividade */
+  display: block; /* Melhor para a responsividade */
   aspect-ratio: 16 / 9;
-  width: 100%; /* Garante que o player seja responsivo e ocupe a largura do container pai */
-  max-width: 1000px; /* Limita a largura máxima */
+  width: 100%; /* Ajuste para a largura ser responsiva */
+  max-width: 100%; /* Limita a largura máxima */
   margin: auto; /* Centraliza o player na página */
 
   --brand-color: #f5f5f5;
@@ -30,7 +30,7 @@
   bottom: 0;
   left: 0; /* Certifica-se de que comece da esquerda do player */
   width: 100%; /* Faz com que a largura da barra de progresso corresponda à do player */
-  max-width: 1000px; /* Limita a largura máxima da barra de progresso */
+  max-width: 100%; /* Limita a largura máxima da barra de progresso */
   background-color: #ddd;
   height: 10px;
   border-radius: 10px;
@@ -78,11 +78,10 @@
 }
 
 .player[data-view-type='video'] {
-  display: flex;
-  aspect-ratio: 16 /9;
-  width: 180%;
-  max-width: 1000px;
-  
+  display: block; /* ou flex, dependendo da necessidade */
+  aspect-ratio: 16 / 9;
+  width: 100%; /* Corrige a largura para ser responsiva */
+  max-width: 1000px; /* Mantém a largura máxima como 1000px */
 }
 
 .src-buttons {

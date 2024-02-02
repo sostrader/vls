@@ -8,18 +8,13 @@ import { MediaPlayer, MediaProvider, Poster, isYouTubeProvider,
   type MediaProviderAdapter,
 } from '@vidstack/react';
 import { defaultLayoutIcons, DefaultAudioLayout, DefaultVideoLayout } from '@vidstack/react/player/layouts/default';
-import ProgressBar from './ProgressBar'; // Import the ProgressBar component
+import ProgressBar from './ProgressBar';
 import DelayButton from './DelayedButton'
 
 
 export function Player() {
 
 
-      function onProviderChange(provider: MediaProviderAdapter | null) {
-        if (isYouTubeProvider(provider)) {
-          provider.cookies = true;
-        }
-      }
   
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -30,16 +25,16 @@ export function Player() {
   return (
     <div className="player-container">
       <div className="video-and-progress-container">
-        <MediaPlayer onProviderChange={onProviderChange}
+        <MediaPlayer
           playsinline
-          load="visible"
+          aspectRatio="16/9"
+          load="eager"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
           src="youtube/4tUU66blhuY"
           crossorigin
           onPlay={handlePlay}
           onPause={handlePause}
-          
         >
           <MediaProvider>
             <Poster className="vds-poster" src="clicktoplay.gif" alt="Play!" />

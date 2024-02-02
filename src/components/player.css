@@ -68,7 +68,7 @@
 .player .vds-tooltip,
 .player .vds-tooltip-content,
 .player .vds-menu-button {
-  display: none;
+  opacity: 0;
 }
 
 .player[data-view-type='video'] .vds-chapter-title,

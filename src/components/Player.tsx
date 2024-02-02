@@ -28,7 +28,7 @@ export function Player() {
         <MediaPlayer
           playsinline
           aspectRatio="16/9"
-          load="eager"
+          load="visible"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
           src="youtube/4tUU66blhuY"

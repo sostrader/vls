@@ -31,11 +31,12 @@ export function Player() {
         <MediaPlayer
         onProviderChange={onProviderChange}
           playsinline
+          autoplay
           aspectRatio="16/9"
-          load="visible"
+          load="eager"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
-          src="https://www.youtube.com/embed/4tUU66blhuY"
+          src="https://player.vimeo.com/video/909190533?h=9b7859a573"
           crossorigin
           onPlay={handlePlay}
           onPause={handlePause}

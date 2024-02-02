@@ -31,13 +31,13 @@ export function Player() {
           load="visible"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
-          src="youtube/4tUU66blhuY"
+          src="https://player.vimeo.com/video/909150840?h=f98a95c701"
           crossorigin
           onPlay={handlePlay}
           onPause={handlePause}
         >
           <MediaProvider>
-            <Poster className="vds-poster" src="clicktoplay.gif" alt="Play!" />
+            <Poster className="vds-poster" src="https://vls-zeta.vercel.app/clicktoplay.gif" alt="Play!" />
           </MediaProvider>
           <DefaultAudioLayout icons={defaultLayoutIcons} />
           <DefaultVideoLayout icons={defaultLayoutIcons} />
@@ -50,3 +50,4 @@ export function Player() {
     </div>
   );
 }
+

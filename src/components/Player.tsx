@@ -30,13 +30,12 @@ export function Player() {
       <div className="video-and-progress-container">
         <MediaPlayer
         onProviderChange={onProviderChange}
-          autoplay
           playsinline
           aspectRatio="16/9"
           load="visible"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
-          src="https://www.youtube-nocookie.com/embed/4tUU66blhuY"
+          src="https://www.youtube.com/embed/4tUU66blhuY"
           crossorigin
           onPlay={handlePlay}
           onPause={handlePause}

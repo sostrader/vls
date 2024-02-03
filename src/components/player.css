@@ -30,7 +30,7 @@
   background-color: none;
   height: 15px;
   border-radius: 0; /* Torna os cantos retangulares */
-  margin-bottom: -1px;
+  margin-bottom: -10px;
 }
 
 .progress-bar {

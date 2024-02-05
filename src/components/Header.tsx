@@ -10,8 +10,8 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title1, title2 }) => {
   return (
     <header className="w-full text-center p-5 bg-gray-900">
-      <h1 className="text-2xl font-bold text-white">{title1}</h1>
-      <h2 className="text-2xl font-semibold text-white">{title2}</h2>
+      <h1 className="text-2lg font-bold text-white">{title1}</h1>
+      <h2 className="text-2lg font-semibold text-white">{title2}</h2>
     </header>
   );
 };

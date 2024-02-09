@@ -1,0 +1,39 @@
+.container {
+    text-align: center;
+    padding: 20px;
+   
+  }
+  
+  .title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  .description {
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .date {
+    font-size: 1.5em;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .button {
+    background-color: #5dbd14; /* ou qualquer cor que você queira */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #a4c88e; /* cor mais escura para o hover */
+  }
+  

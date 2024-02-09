@@ -3,37 +3,41 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import styles from './DelayedButton.module.css'; // Certifique-se de criar um arquivo CSS correspondente
 
 interface DelayedButtonProps {
   isPlaying: boolean;
 }
 
 const DelayedButton: React.FC<DelayedButtonProps> = ({ isPlaying }) => {
-  const [showButton, setShowButton] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    let timer: string | number | NodeJS.Timeout | undefined;
+    let timer: NodeJS.Timeout | undefined;
 
     if (isPlaying) {
       timer = setTimeout(() => {
-        setShowButton(true);
-      }, 378000); // Timer starts when isPlaying is true
+        setShowContent(true);
+      }, 378600); // Ajuste o tempo de acordo com a necessidade
     }
 
-    return () => clearTimeout(timer);
-  }, [isPlaying]); // Dependency array includes isPlaying
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [isPlaying]);
 
-  if (!showButton) {
+  if (!showContent) {
     return null;
   }
 
   return (
-  <div className="delayed-button-container"> {/* Adiciona o container com a classe para a margem */}
-    <Link href={'https://secure.doppus.com/pay/P9O5Z0M9O5Z0G905HJB'} legacyBehavior>
-    <a className="bg-green-500 text-white p-4 rounded-full text-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-opacity-50">Eu quero</a>
-    </Link>
-  </div>
-);
+    <div className={styles.container}>
+      <p className={styles.date}>OFERTA LIMITADA</p>
+      <Link href="https://secure.doppus.com/pay/P9O5Z0M9O5Z0G905HJB" legacyBehavior>
+        <a className={styles.button}>GARANTA O SEU AGORA</a>
+      </Link>
+    </div>
+  );
 };
 
 export default DelayedButton;

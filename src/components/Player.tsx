@@ -35,7 +35,7 @@ export function Player() {
           load="visible"
           className="player" // Garante que o player utilize a classe correta para responsividade
           title="Ecos da Identidade."
-          src="https://player.vimeo.com/video/909190533?h=9b7859a573"
+          src="https://player.vimeo.com/video/911543616"
           crossorigin
           onPlay={handlePlay}
           onPause={handlePause}

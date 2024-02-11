@@ -2,7 +2,6 @@
 import React from 'react';
 import Header from '../components/Header'; // Ajuste o caminho conforme necessário
 import { Player } from '../components/Player'; // Ajuste o caminho conforme necessário
-import Footer from '../components/Footer'; // Adicione esta linha
 
 export default function Home() {
   return (
